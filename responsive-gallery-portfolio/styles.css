@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: "Amatic SC", cursive;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+ul {
+  display: flex;
+  /* added padding-inline-start to overwrite styling issue for some browsers */
+  padding-inline-start: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 20px;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  width: 120px;
+  margin-top: -10px;
+}
+
+.hero-section {
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: block;
+  position: relative;
+  width: 20%;
+  transition: transform 500ms;
+}
+
+.container img {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  height: auto;
+  /* transition: 0.5s ease; */
+}
+
+.row .container:focus,
+.row .container:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  width: 100%;
+}
+
+.spacer {
+  background-color: blue;
+  height: 5000px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .text {
+    font-size: 10px;
+    padding: 32px 16px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .extra-item {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .row .container:focus,
+  .row .container:hover {
+    transform: none;
+    z-index: 1;
+  }
+
+  .footer {
+    position: relative;
+  }
+
+  .text {
+    font-size: 32px;
+    padding: 32px 16px;
+  }
+}
